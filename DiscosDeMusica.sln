@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "Discos\Vista.csproj", "{32AA6662-063B-4D3D-B522-E83AA76157D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{EFA5DA12-210B-4590-A616-C20A4C095113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controlador", "Controlador\Controlador.csproj", "{D30C3666-ADF7-4D9C-B827-747B1AF60F17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32AA6662-063B-4D3D-B522-E83AA76157D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32AA6662-063B-4D3D-B522-E83AA76157D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32AA6662-063B-4D3D-B522-E83AA76157D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32AA6662-063B-4D3D-B522-E83AA76157D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA5DA12-210B-4590-A616-C20A4C095113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA5DA12-210B-4590-A616-C20A4C095113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA5DA12-210B-4590-A616-C20A4C095113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA5DA12-210B-4590-A616-C20A4C095113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30C3666-ADF7-4D9C-B827-747B1AF60F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30C3666-ADF7-4D9C-B827-747B1AF60F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30C3666-ADF7-4D9C-B827-747B1AF60F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30C3666-ADF7-4D9C-B827-747B1AF60F17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A338C4AA-D24B-4D9F-B98D-BD6BE3D1E848}
+	EndGlobalSection
+EndGlobal
