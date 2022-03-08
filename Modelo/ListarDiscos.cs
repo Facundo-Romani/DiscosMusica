@@ -17,7 +17,7 @@ namespace Modelo
 
             try
             {
-                datos.setearConsulta("select Titulo, FechaLanzamiento , CantidadCanciones, UrlImagenTapa from DISCOS");
+                datos.setearConsulta("select D.Titulo , D.FechaLanzamiento , D.CantidadCanciones, D.UrlImagenTapa , E.Descripcion , TE.Descripcion from DISCOS D, ESTILOS E, TIPOSEDICION TE Where D.IdTipoEdicion = TE.Id  AND D.IdEstilo = E.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -27,12 +27,14 @@ namespace Modelo
                     aux.Fecha = datos.Lector.GetDateTime(1);
                     aux.Canciones = datos.Lector.GetInt32(2);
                     aux.UrlImagen = (string)datos.Lector["UrlImagenTapa"];
+                    aux.Descripcion = new Edicion();
+                    aux.Descripcion.Descripcion = (string)datos.Lector["Descripcion"];
 
                     lista.Add(aux);
                 }
                 return lista;
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 
                 throw ex;

@@ -14,6 +14,7 @@ namespace Controlador
         public DateTime Fecha { get; set; }
         public int Canciones { get; set; }
         public string UrlImagen { get; set; }
+        public Edicion Descripcion { get; set; }
 
     }
 }
