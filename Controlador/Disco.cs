@@ -15,6 +15,7 @@ namespace Controlador
         public int Canciones { get; set; }
         public string UrlImagen { get; set; }
         public Edicion Descripcion { get; set; }
+        public GeneroMusical Genero { get; set; }
 
     }
 }

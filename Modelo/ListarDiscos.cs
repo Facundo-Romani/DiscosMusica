@@ -17,7 +17,7 @@ namespace Modelo
 
             try
             {
-                datos.setearConsulta("select D.Titulo , D.FechaLanzamiento , D.CantidadCanciones, D.UrlImagenTapa , E.Descripcion , TE.Descripcion from DISCOS D, ESTILOS E, TIPOSEDICION TE Where D.IdTipoEdicion = TE.Id  AND D.IdEstilo = E.Id");
+                datos.setearConsulta("select D.Titulo , D.FechaLanzamiento , D.CantidadCanciones, D.UrlImagenTapa , E.Descripcion Genero , TE.Descripcion Edicion from DISCOS D, ESTILOS E, TIPOSEDICION TE Where D.IdTipoEdicion = TE.Id  AND D.IdEstilo = E.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -28,7 +28,9 @@ namespace Modelo
                     aux.Canciones = datos.Lector.GetInt32(2);
                     aux.UrlImagen = (string)datos.Lector["UrlImagenTapa"];
                     aux.Descripcion = new Edicion();
-                    aux.Descripcion.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Descripcion.Descripcion = (string)datos.Lector["Edicion"];
+                    aux.Genero = new GeneroMusical();
+                    aux.Genero.Genero = (string)datos.Lector["Genero"];
 
                     lista.Add(aux);
                 }
