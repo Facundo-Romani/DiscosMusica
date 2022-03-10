@@ -52,6 +52,12 @@ namespace Discos
                 throw ex;
             }
         }
-       
+
+        // ACCION AL BTN AGREGAR PARA ABRIR LA NUEVA VENTANA.
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregarDisco agregarDisco = new frmAgregarDisco();
+            agregarDisco.ShowDialog();
+        }
     }
 }

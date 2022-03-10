@@ -53,6 +53,22 @@ namespace Modelo
             }
         }
 
+        // METIODO EJECUTAR ACCION INSERTAR DATOS A BDD.
+        public void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         // CREAMOS EL METODO CERRAR CONEXION PARA DAR FIN A LA CONEXION CON LA BASE DE DATOS.
         public void cerrarConexion()
         { 

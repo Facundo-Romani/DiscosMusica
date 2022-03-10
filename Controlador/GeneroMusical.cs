@@ -10,7 +10,6 @@ namespace Controlador
     {
         public int Id { get; set; }
         public string Genero { get; set; }
-
         public override string ToString()
         {
             return Genero;
