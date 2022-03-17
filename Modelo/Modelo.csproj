@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="AgregarCbxEdicion.cs" />
+    <Compile Include="AgregarComboBox.cs" />
+    <Compile Include="AgregarModificar.cs" />
     <Compile Include="ListarDiscos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

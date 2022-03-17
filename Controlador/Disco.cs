@@ -16,6 +16,5 @@ namespace Controlador
         public string UrlImagen { get; set; }
         public Edicion Descripcion { get; set; }
         public GeneroMusical Genero { get; set; }
-
     }
 }

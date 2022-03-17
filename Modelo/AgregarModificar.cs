@@ -15,7 +15,7 @@ namespace Modelo
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Insert into DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, Activo)values(" + nuevo.Titulo + ", '" + nuevo.Fecha + "', '" + nuevo.Canciones + "', 1");
+                datos.setearConsulta("Insert into DISCOS(Titulo, FechaLanzamiento , CantidadCanciones) values ('" + nuevo.Titulo + "', '" + nuevo.Fecha + "', '" + nuevo.Canciones + "')");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

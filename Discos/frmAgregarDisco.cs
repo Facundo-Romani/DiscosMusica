@@ -33,19 +33,36 @@ namespace Discos
             try
             {
                 nuevo.Titulo = txtTitulo.Text;
-                nuevo.Fecha = DateTime.Now;
+                nuevo.Fecha = DateTime.Parse(""); 
                 nuevo.Canciones = int.Parse(txtCanciones.Text);
                 
                 bdd.agregarDisco(nuevo);
                 MessageBox.Show("Agregado Exitosamente");
-                Close();
-                
+                Close();    
             }
             catch (Exception ex)
             {
 
-               MessageBox.Show(ex.ToString());
+               throw ex;
             }
+        }
+
+        private void frmAgregarDisco_Load(object sender, EventArgs e)
+        {    
+            //ListarDiscos listaDisco = new ListarDiscos();
+            AgregarComboBox agregarComboBox = new AgregarComboBox();
+            AgregarCbxEdicion agregarCbxEdicion = new AgregarCbxEdicion();
+            try
+            {
+                cbxGenero.DataSource = agregarComboBox.listarCbx();
+                cbxEdicion.DataSource = agregarCbxEdicion.listarEdicion();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
     }
 }

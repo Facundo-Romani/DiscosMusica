@@ -36,12 +36,16 @@
             this.txtCanciones = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cbxGenero = new System.Windows.Forms.ComboBox();
+            this.cbxEdicion = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 114);
+            this.label1.Location = new System.Drawing.Point(12, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 20);
             this.label1.TabIndex = 0;
@@ -50,16 +54,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 246);
+            this.label2.Location = new System.Drawing.Point(12, 167);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 24);
+            this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Canciones";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 179);
+            this.label3.Location = new System.Drawing.Point(12, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 20);
             this.label3.TabIndex = 2;
@@ -67,28 +71,28 @@
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(131, 111);
+            this.txtTitulo.Location = new System.Drawing.Point(131, 42);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(181, 26);
             this.txtTitulo.TabIndex = 3;
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(131, 176);
+            this.txtFecha.Location = new System.Drawing.Point(131, 102);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(181, 26);
             this.txtFecha.TabIndex = 4;
             // 
             // txtCanciones
             // 
-            this.txtCanciones.Location = new System.Drawing.Point(131, 243);
+            this.txtCanciones.Location = new System.Drawing.Point(131, 167);
             this.txtCanciones.Name = "txtCanciones";
             this.txtCanciones.Size = new System.Drawing.Size(181, 26);
             this.txtCanciones.TabIndex = 5;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(84, 321);
+            this.btnAgregar.Location = new System.Drawing.Point(91, 357);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(80, 31);
             this.btnAgregar.TabIndex = 6;
@@ -98,13 +102,47 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(230, 321);
+            this.btnCancelar.Location = new System.Drawing.Point(220, 357);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(82, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(92, 31);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cbxGenero
+            // 
+            this.cbxGenero.FormattingEnabled = true;
+            this.cbxGenero.Location = new System.Drawing.Point(131, 224);
+            this.cbxGenero.Name = "cbxGenero";
+            this.cbxGenero.Size = new System.Drawing.Size(181, 28);
+            this.cbxGenero.TabIndex = 8;
+            // 
+            // cbxEdicion
+            // 
+            this.cbxEdicion.FormattingEnabled = true;
+            this.cbxEdicion.Location = new System.Drawing.Point(131, 288);
+            this.cbxEdicion.Name = "cbxEdicion";
+            this.cbxEdicion.Size = new System.Drawing.Size(181, 28);
+            this.cbxEdicion.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 292);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Edicion";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 232);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 24);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Genero";
             // 
             // frmAgregarDisco
             // 
@@ -112,6 +150,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(426, 430);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbxEdicion);
+            this.Controls.Add(this.cbxGenero);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtCanciones);
@@ -123,6 +165,7 @@
             this.Name = "frmAgregarDisco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregarDisco";
+            this.Load += new System.EventHandler(this.frmAgregarDisco_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +181,9 @@
         private System.Windows.Forms.TextBox txtCanciones;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cbxGenero;
+        private System.Windows.Forms.ComboBox cbxEdicion;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
