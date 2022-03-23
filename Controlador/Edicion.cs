@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controlador
 {
-    public class Edicion
+    public class Edicion 
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }

@@ -17,12 +17,13 @@ namespace Modelo
 
             try
             {
-                datos.setearConsulta("select Descripcion from TIPOSEDICION");
+                datos.setearConsulta("select Id , Descripcion from TIPOSEDICION");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Edicion aux = new Edicion();
+                    aux.Id = (int)datos.Lector["Id"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     
                     lista.Add(aux);

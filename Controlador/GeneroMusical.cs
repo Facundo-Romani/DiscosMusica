@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controlador
 {
-    public class GeneroMusical
+    public class GeneroMusical 
     {
         public int Id { get; set; }
         public string Genero { get; set; }

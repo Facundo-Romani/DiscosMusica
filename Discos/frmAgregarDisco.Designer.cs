@@ -40,6 +40,10 @@
             this.cbxEdicion = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtUrlDisco = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBoxDisco = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisco)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -140,16 +144,46 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 232);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 24);
+            this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Genero";
+            // 
+            // txtUrlDisco
+            // 
+            this.txtUrlDisco.Location = new System.Drawing.Point(380, 362);
+            this.txtUrlDisco.Name = "txtUrlDisco";
+            this.txtUrlDisco.Size = new System.Drawing.Size(262, 26);
+            this.txtUrlDisco.TabIndex = 12;
+            this.txtUrlDisco.Leave += new System.EventHandler(this.txtUrlDisco_Leave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(459, 339);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "URL DISCO";
+            // 
+            // pictureBoxDisco
+            // 
+            this.pictureBoxDisco.Location = new System.Drawing.Point(380, 42);
+            this.pictureBoxDisco.Name = "pictureBoxDisco";
+            this.pictureBoxDisco.Size = new System.Drawing.Size(262, 274);
+            this.pictureBoxDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDisco.TabIndex = 14;
+            this.pictureBoxDisco.TabStop = false;
             // 
             // frmAgregarDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ClientSize = new System.Drawing.Size(426, 430);
+            this.ClientSize = new System.Drawing.Size(689, 462);
+            this.Controls.Add(this.pictureBoxDisco);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtUrlDisco);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbxEdicion);
@@ -166,6 +200,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregarDisco";
             this.Load += new System.EventHandler(this.frmAgregarDisco_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +220,8 @@
         private System.Windows.Forms.ComboBox cbxEdicion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtUrlDisco;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBoxDisco;
     }
 }

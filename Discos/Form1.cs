@@ -23,13 +23,7 @@ namespace Discos
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // CREAR OBJETO DE TIPO LISTAR DISCO DARLE INSTACIA PARA LUEGO ACCEDER AL METODO LISTAR, LO GUARDAMOS EN LA VARIABLE TIPO LIST.
-            // Y LUEGO MOSTRAR LA LISTA EN DATA G.V.
-            ListarDiscos discos = new ListarDiscos();
-            listaDisco = discos.listar();
-            DgvDiscos.DataSource = listaDisco;
-            DgvDiscos.Columns["UrlImagen"].Visible = false;
-            cargarImagen(listaDisco[0].UrlImagen);
+            cargar();
         }
 
         // EVENTO DE SELECCIÓN PARA CAMBIAR LAS IMAGENES DESDE EL DgvDiscos.
@@ -39,7 +33,7 @@ namespace Discos
             cargarImagen(seleccionado.UrlImagen);
         }
 
-        // MÉTODO PARA CARGAR IMAGEN.
+        // MÉTODO PARA CARGAR IMAGEN.    
         private void cargarImagen(string imagen)
         {
             try
@@ -53,11 +47,39 @@ namespace Discos
             }
         }
 
-            // ACCION AL BTN AGREGAR PARA ABRIR LA NUEVA VENTANA.
-            private void btnAgregar_Click(object sender, EventArgs e)
+        private void cargar()
+        {
+            // CREAR OBJETO DE TIPO LISTAR DISCO DARLE INSTACIA PARA LUEGO ACCEDER AL METODO LISTAR, LO GUARDAMOS EN LA VARIABLE TIPO LIST.
+            // Y LUEGO MOSTRAR LA LISTA EN DATA G.V.
+            ListarDiscos discos = new ListarDiscos();
+            try
+            {
+                listaDisco = discos.listar();
+                DgvDiscos.DataSource = listaDisco;
+                DgvDiscos.Columns["UrlImagen"].Visible = false;
+                cargarImagen(listaDisco[0].UrlImagen);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); ;
+            }
+           
+        }
+
+        // ACCION AL BTN AGREGAR PARA ABRIR LA NUEVA VENTANA.
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarDisco agregarDisco = new frmAgregarDisco();
             agregarDisco.ShowDialog();
+            cargar(); 
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Disco seleccionado;
+            seleccionado = (Disco)DgvDiscos.CurrentRow.DataBoundItem;
+            frmAgregarDisco modificar = new frmAgregarDisco(seleccionado);
+            modificar.ShowDialog();
         }
     }
 }

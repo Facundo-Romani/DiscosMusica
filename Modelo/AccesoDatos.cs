@@ -69,6 +69,12 @@ namespace Modelo
             }
         }
 
+        // METODO SETEAR PARAMETRO PARA INSERT
+        public void setearParametro(string nombre , object value)
+        {
+            comando.Parameters.AddWithValue(nombre , value);
+        }
+
         // CREAMOS EL METODO CERRAR CONEXION PARA DAR FIN A LA CONEXION CON LA BASE DE DATOS.
         public void cerrarConexion()
         { 

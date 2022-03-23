@@ -16,15 +16,15 @@ namespace Modelo
             AccesoDatos dbb = new AccesoDatos();
             try
             {
-                dbb.setearConsulta("select Descripcion from ESTILOS");
+                dbb.setearConsulta("select Id, Descripcion from ESTILOS");
                 dbb.ejecutarLectura();
 
                 while (dbb.Lector.Read())
                 {
                     GeneroMusical aux = new GeneroMusical();
+                    aux.Id = (int)dbb.Lector["Id"];
                     aux.Genero = (string)dbb.Lector["Descripcion"];
                     
-
                     lista.Add(aux);
                 }
 

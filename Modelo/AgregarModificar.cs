@@ -15,7 +15,10 @@ namespace Modelo
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Insert into DISCOS(Titulo, FechaLanzamiento , CantidadCanciones) values ('" + nuevo.Titulo + "', '" + nuevo.Fecha + "', '" + nuevo.Canciones + "')");
+                datos.setearConsulta("Insert into DISCOS(Titulo, FechaLanzamiento , CantidadCanciones , UrlImagenTapa , IdEstilo , IdTipoEdicion) values ('" + nuevo.Titulo + "', '" + nuevo.Fecha + "', '" + nuevo.Canciones + "' , @UrlImagenTapa , @IdEstilo , @IdTipoEdicion)");
+                datos.setearParametro("@UrlImagenTapa", nuevo.UrlImagen);
+                datos.setearParametro("@IdEstilo", nuevo.Genero.Id);
+                datos.setearParametro("@IdTipoEdicion", nuevo.Genero.Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

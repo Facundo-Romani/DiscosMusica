@@ -31,6 +31,7 @@
             this.DgvDiscos = new System.Windows.Forms.DataGridView();
             this.ImagenDisco = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenDisco)).BeginInit();
             this.SuspendLayout();
@@ -39,7 +40,9 @@
             // 
             this.DgvDiscos.BackgroundColor = System.Drawing.Color.IndianRed;
             this.DgvDiscos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvDiscos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgvDiscos.Location = new System.Drawing.Point(12, 149);
+            this.DgvDiscos.MultiSelect = false;
             this.DgvDiscos.Name = "DgvDiscos";
             this.DgvDiscos.RowHeadersWidth = 62;
             this.DgvDiscos.RowTemplate.Height = 28;
@@ -66,12 +69,23 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(164, 382);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(110, 37);
+            this.btnModificar.TabIndex = 3;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(1213, 602);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.ImagenDisco);
             this.Controls.Add(this.DgvDiscos);
@@ -90,6 +104,7 @@
         private System.Windows.Forms.DataGridView DgvDiscos;
         private System.Windows.Forms.PictureBox ImagenDisco;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 
