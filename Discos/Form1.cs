@@ -57,6 +57,7 @@ namespace Discos
                 listaDisco = discos.listar();
                 DgvDiscos.DataSource = listaDisco;
                 DgvDiscos.Columns["UrlImagen"].Visible = false;
+                DgvDiscos.Columns["Id"].Visible = false;
                 cargarImagen(listaDisco[0].UrlImagen);
             }
             catch (Exception ex)

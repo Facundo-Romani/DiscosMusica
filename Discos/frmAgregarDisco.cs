@@ -36,19 +36,31 @@ namespace Discos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Disco nuevo = new Disco();
+            
             AgregarModificar bdd = new AgregarModificar();
 
             try
             {
-                nuevo.Titulo = txtTitulo.Text;
-                nuevo.Fecha = DateTime.Parse(""); 
-                nuevo.Canciones = int.Parse(txtCanciones.Text);
-                nuevo.UrlImagen = txtUrlDisco.Text;
-                cargarImagenDisco(disco.UrlImagen);
+                if (disco == null)
+                    disco = new Disco();
                 
-                bdd.agregarDisco(nuevo);
-                MessageBox.Show("Agregado Exitosamente");
+                disco.Titulo = txtTitulo.Text;
+                disco.Fecha = DateTime.Parse(""); 
+                disco.Canciones = int.Parse(txtCanciones.Text);
+                disco.UrlImagen = txtUrlDisco.Text;
+                cargarImagenDisco(disco.UrlImagen);
+
+                if (disco.Id != 0)
+                {
+                    bdd.agregarDisco(disco);
+                    MessageBox.Show("Agregado Exitosamente");
+                }
+                else
+                {
+                    bdd.modificar(disco);
+                    MessageBox.Show("Modificado Exitosamente");
+                }
+
                 Close();    
             }
             catch (Exception ex)

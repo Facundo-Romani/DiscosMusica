@@ -34,9 +34,25 @@ namespace Modelo
 
         // METODO ACTUALIZAR DISCO.
 
-        public void modificar(Disco modificar)
+        public void modificar(Disco disco)
         {
+            AccesoDatos modifica = new AccesoDatos();
+            
+            try
+            {
+                modifica.setearConsulta("update DISCOS set  Titulo = @titulo, FechaLanzamiento = @fecha, CantidadCanciones = @canciones, UrlImagenTapa = @img , IdEstilo = @idEstilo, IdTipoEdicion = @edicion Where Id = @id ");
+                modifica.setearParametro("@titulo" , disco.Titulo );
+                modifica.setearParametro(" @fecha", disco.Fecha);
+                modifica.setearParametro("@canciones", disco.Canciones);
+                modifica.setearParametro(" @img", disco.UrlImagen);
+                modifica.setearParametro("@idEstilo", disco.Genero.Id);
+                modifica.setearParametro("@edicion", disco.Descripcion.Id);
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
         }
 
     }

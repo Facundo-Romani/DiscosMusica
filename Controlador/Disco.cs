@@ -9,8 +9,10 @@ using System.ComponentModel;
 namespace Controlador
 {
     public class Disco
-    {    
+    {
         // PROPIEDADES, METODOS SET Y GET.
+        public int Id { get; set; }
+
         [DisplayName("Título")]
         public string Titulo { get; set; }
         public DateTime Fecha { get; set; }
