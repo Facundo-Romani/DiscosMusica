@@ -45,20 +45,20 @@ namespace Discos
                     disco = new Disco();
                 
                 disco.Titulo = txtTitulo.Text;
-                disco.Fecha = DateTime.Parse(""); 
+                disco.Fecha = DateTime.Parse(txtFecha.Text); 
                 disco.Canciones = int.Parse(txtCanciones.Text);
                 disco.UrlImagen = txtUrlDisco.Text;
                 cargarImagenDisco(disco.UrlImagen);
 
                 if (disco.Id != 0)
                 {
-                    bdd.agregarDisco(disco);
-                    MessageBox.Show("Agregado Exitosamente");
+                    bdd.modificar(disco);
+                    MessageBox.Show("Modificado Exitosamente");
                 }
                 else
                 {
-                    bdd.modificar(disco);
-                    MessageBox.Show("Modificado Exitosamente");
+                    bdd.agregarDisco(disco);
+                    MessageBox.Show("Agregado Exitosamente");
                 }
 
                 Close();    
