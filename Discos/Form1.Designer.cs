@@ -32,6 +32,7 @@
             this.ImagenDisco = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenDisco)).BeginInit();
             this.SuspendLayout();
@@ -41,12 +42,12 @@
             this.DgvDiscos.BackgroundColor = System.Drawing.Color.IndianRed;
             this.DgvDiscos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDiscos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DgvDiscos.Location = new System.Drawing.Point(12, 149);
+            this.DgvDiscos.Location = new System.Drawing.Point(12, 105);
             this.DgvDiscos.MultiSelect = false;
             this.DgvDiscos.Name = "DgvDiscos";
             this.DgvDiscos.RowHeadersWidth = 62;
             this.DgvDiscos.RowTemplate.Height = 28;
-            this.DgvDiscos.Size = new System.Drawing.Size(842, 185);
+            this.DgvDiscos.Size = new System.Drawing.Size(842, 261);
             this.DgvDiscos.TabIndex = 0;
             this.DgvDiscos.SelectionChanged += new System.EventHandler(this.DgvDiscos_SelectionChanged);
             // 
@@ -79,19 +80,30 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(318, 382);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(114, 37);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(1213, 602);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.ImagenDisco);
             this.Controls.Add(this.DgvDiscos);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "DISCOS";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDiscos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenDisco)).EndInit();
@@ -105,6 +117,7 @@
         private System.Windows.Forms.PictureBox ImagenDisco;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 

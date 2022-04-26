@@ -82,5 +82,10 @@ namespace Discos
             frmAgregarDisco modificar = new frmAgregarDisco(seleccionado);
             modificar.ShowDialog();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

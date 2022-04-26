@@ -37,7 +37,7 @@ namespace Modelo
                     aux.Descripcion.Descripcion = (string)datos.Lector["Edicion"];
                     aux.Genero = new GeneroMusical();
                     aux.Genero.Id = (int)datos.Lector["IdTipoEdicion"];
-                    aux.Genero.Genero = (string)datos.Lector["Genero"];
+                    aux.Genero.Descripcion = (string)datos.Lector["Genero"];
 
                     lista.Add(aux);
                 }

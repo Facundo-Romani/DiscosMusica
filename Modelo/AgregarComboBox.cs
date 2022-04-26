@@ -23,7 +23,7 @@ namespace Modelo
                 {
                     GeneroMusical aux = new GeneroMusical();
                     aux.Id = (int)dbb.Lector["Id"];
-                    aux.Genero = (string)dbb.Lector["Descripcion"];
+                    aux.Descripcion = (string)dbb.Lector["Descripcion"];
                     
                     lista.Add(aux);
                 }
