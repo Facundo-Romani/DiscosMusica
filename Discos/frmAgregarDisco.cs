@@ -92,8 +92,8 @@ namespace Discos
                     txtCanciones.Text = disco.Canciones.ToString();
                     txtUrlDisco.Text = disco.UrlImagen;
                     cargarImagenDisco(disco.UrlImagen);
-                    cbxEdicion.SelectedValue = disco.Descripcion.Id;
-                    cbxGenero.SelectedValue = disco.Genero.Id;
+                    cbxEdicion.SelectedValue = disco.Edicion.Id;
+                    cbxGenero.SelectedValue = disco.Estilo.Id;
                     
                 }
             }

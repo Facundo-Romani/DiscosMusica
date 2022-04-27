@@ -18,9 +18,10 @@ namespace Controlador
         public DateTime Fecha { get; set; }
         public int Canciones { get; set; }
         public string UrlImagen { get; set; }
+        public GeneroMusical Estilo { get; set; }
         
-        [DisplayName("Descripción")]
-        public Edicion Descripcion { get; set; }
-        public GeneroMusical Genero { get; set; }
+        [DisplayName("Edición")]
+        public Edicion Edicion { get; set; }
+        
     }
 }

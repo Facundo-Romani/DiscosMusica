@@ -17,8 +17,8 @@ namespace Modelo
             {
                 datos.setearConsulta("Insert into DISCOS(Titulo, FechaLanzamiento , CantidadCanciones , UrlImagenTapa , IdEstilo , IdTipoEdicion) values ('" + nuevo.Titulo + "', '" + nuevo.Fecha + "', '" + nuevo.Canciones + "' , @UrlImagenTapa , @IdEstilo , @IdTipoEdicion)");
                 datos.setearParametro("@UrlImagenTapa", nuevo.UrlImagen);
-                datos.setearParametro("@IdEstilo", nuevo.Genero.Id);
-                datos.setearParametro("@IdTipoEdicion", nuevo.Genero.Id);
+                datos.setearParametro("@IdEstilo", nuevo.Estilo.Id);
+                datos.setearParametro("@IdTipoEdicion", nuevo.Edicion.Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -33,7 +33,6 @@ namespace Modelo
         }
 
         // METODO ACTUALIZAR DISCO.
-
         public void modificar(Disco disco)
         {
             AccesoDatos modifica = new AccesoDatos();
@@ -41,12 +40,12 @@ namespace Modelo
             try
             {
                 modifica.setearConsulta("update DISCOS set  Titulo = @titulo, FechaLanzamiento = @fecha, CantidadCanciones = @canciones, UrlImagenTapa = @img , IdEstilo = @idEstilo, IdTipoEdicion = @edicion Where Id = @id ");
-                modifica.setearParametro("@titulo" , disco.Titulo );
+                modifica.setearParametro("@titulo" , disco.Titulo);
                 modifica.setearParametro(" @fecha", disco.Fecha);
                 modifica.setearParametro("@canciones", disco.Canciones);
                 modifica.setearParametro(" @img", disco.UrlImagen);
-                modifica.setearParametro("@idEstilo", disco.Genero.Id);
-                modifica.setearParametro("@edicion", disco.Descripcion.Id);
+                modifica.setearParametro("@idEstilo", disco.Estilo.Id);
+                modifica.setearParametro("@edicion", disco.Edicion.Id);
             }
             catch (Exception ex)
             {
@@ -55,5 +54,20 @@ namespace Modelo
             }
         }
 
+        public void eliminarDisco(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("DELETE from DISCOS WHERE id = @id");
+                datos.setearParametro("@id" , id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

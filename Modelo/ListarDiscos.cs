@@ -32,12 +32,12 @@ namespace Modelo
                     if (!(datos.Lector["UrlImagenTapa"] is DBNull))
                     aux.UrlImagen = (string)datos.Lector["UrlImagenTapa"];
 
-                    aux.Descripcion = new Edicion();
-                    aux.Descripcion.Id = (int)datos.Lector["IdEstilo"];
-                    aux.Descripcion.Descripcion = (string)datos.Lector["Edicion"];
-                    aux.Genero = new GeneroMusical();
-                    aux.Genero.Id = (int)datos.Lector["IdTipoEdicion"];
-                    aux.Genero.Descripcion = (string)datos.Lector["Genero"];
+                    aux.Edicion = new Edicion();
+                    aux.Edicion.Id = (int)datos.Lector["IdTipoEdicion"];
+                    aux.Edicion.Descripcion = (string)datos.Lector["Edicion"];
+                    aux.Estilo = new GeneroMusical();
+                    aux.Estilo.Id = (int)datos.Lector["IdEstilo"];
+                    aux.Estilo.Descripcion = (string)datos.Lector["Genero"];
 
                     lista.Add(aux);
                 }

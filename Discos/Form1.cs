@@ -83,9 +83,26 @@ namespace Discos
             modificar.ShowDialog();
         }
 
+        // ELIMINAR DISCO.
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            AgregarModificar disco = new AgregarModificar();
+            Disco seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿De verdad qurés eliminarlo?" ,"Eliminado" , MessageBoxButtons.YesNo , MessageBoxIcon.Warning);
+                
+                if (respuesta == DialogResult.Yes) 
+                {
+                    seleccionado = (Disco)DgvDiscos.CurrentRow.DataBoundItem;
+                    disco.eliminarDisco(seleccionado.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
