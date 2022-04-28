@@ -49,6 +49,8 @@ namespace Discos
                 disco.Canciones = int.Parse(txtCanciones.Text);
                 disco.UrlImagen = txtUrlDisco.Text;
                 cargarImagenDisco(disco.UrlImagen);
+                disco.Estilo = (GeneroMusical)cbxGenero.SelectedItem;
+                disco.Edicion = (Edicion)cbxEdicion.SelectedItem;
 
                 if (disco.Id != 0)
                 {

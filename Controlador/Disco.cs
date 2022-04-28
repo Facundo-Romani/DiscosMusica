@@ -19,7 +19,7 @@ namespace Controlador
         public int Canciones { get; set; }
         public string UrlImagen { get; set; }
         public GeneroMusical Estilo { get; set; }
-        
+       
         [DisplayName("Edición")]
         public Edicion Edicion { get; set; }
         

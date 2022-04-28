@@ -16,7 +16,7 @@ namespace Modelo
             AccesoDatos dbb = new AccesoDatos();
             try
             {
-                dbb.setearConsulta("select Id, Descripcion from ESTILOS");
+                dbb.setearConsulta("select Id , Descripcion from ESTILOS");
                 dbb.ejecutarLectura();
 
                 while (dbb.Lector.Read())

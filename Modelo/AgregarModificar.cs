@@ -15,7 +15,10 @@ namespace Modelo
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Insert into DISCOS(Titulo, FechaLanzamiento , CantidadCanciones , UrlImagenTapa , IdEstilo , IdTipoEdicion) values ('" + nuevo.Titulo + "', '" + nuevo.Fecha + "', '" + nuevo.Canciones + "' , @UrlImagenTapa , @IdEstilo , @IdTipoEdicion)");
+                datos.setearConsulta("Insert into DISCOS(Titulo, FechaLanzamiento , CantidadCanciones , UrlImagenTapa , IdEstilo , IdTipoEdicion) values (@Titulo, @FechaLanzamiento, @CantidadCanciones , @UrlImagenTapa , @IdEstilo , @IdTipoEdicion)");
+                datos.setearParametro("@Titulo", nuevo.Titulo);
+                datos.setearParametro("@FechaLanzamiento", nuevo.Fecha);
+                datos.setearParametro("@CantidadCanciones", nuevo.Canciones);
                 datos.setearParametro("@UrlImagenTapa", nuevo.UrlImagen);
                 datos.setearParametro("@IdEstilo", nuevo.Estilo.Id);
                 datos.setearParametro("@IdTipoEdicion", nuevo.Edicion.Id);
@@ -54,6 +57,7 @@ namespace Modelo
             }
         }
 
+        // ELIMINAR DISCO.
         public void eliminarDisco(int id)
         {
             try
