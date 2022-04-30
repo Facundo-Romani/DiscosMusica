@@ -10,6 +10,7 @@ namespace Modelo
 {
     public class AgregarComboBox
     {
+        // AGREGAR
         public List<GeneroMusical> listarCbx()
         {
             List<GeneroMusical> lista = new List<GeneroMusical>();
